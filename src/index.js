@@ -4,7 +4,7 @@ import { fetchCountries } from './fetchCountries';
 
 var debounce = require('lodash.debounce');
 
-const DEBOUNCE_DELAY = 500;
+const DEBOUNCE_DELAY = 300;
 
 const inputRef = document.querySelector('#search-box');
 const listRef = document.querySelector('.country-list');
@@ -61,13 +61,13 @@ function createCardMarkup(arr) {
     .map(
       item => `<img src="${item.flags.svg}" alt="flag of ${
         item.name
-      } " width ="100px">
-         <h2>${item.name}</h2>
-         <span>Capital: ${item.capital}</span>
-         <span>Population: ${item.population}</span>
-         <span>Languages: ${item.languages
+      } " width ="50px">
+         <h1>${item.name}</h1>
+        <p> <span class = "label">Capital: ${item.capital}</span></p>
+         <p><span class = "label">Population: ${item.population}</span></p>
+         <p><span class = "label">Languages: ${item.languages
            .map(item => item.name)
-           .join(',')}</span>`
+           .join(', ')}</span></p>`
     )
     .join('');
 }
