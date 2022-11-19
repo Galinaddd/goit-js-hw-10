@@ -50,24 +50,25 @@ function createListMarkup(arr) {
   listRef.innerHTML = arr
     .map(
       item =>
-        `<li ><img src="${item.flags.svg}" alt="flag of ${item.name} " width ="50px">
+        `<li><img class="flag" src="${item.flags.svg}" alt="flag of ${item.name} " width ="50px">
          <h2>${item.name}</h2> </li>`
     )
     .join('');
 }
 
 function createCardMarkup(arr) {
+  console.dir(arr);
   listRef.innerHTML = arr
     .map(
       item => `<img src="${item.flags.svg}" alt="flag of ${
         item.name
       } " width ="50px">
          <h1>${item.name}</h1>
-        <p> <span class = "label">Capital: ${item.capital}</span></p>
-         <p><span class = "label">Population: ${item.population}</span></p>
-         <p><span class = "label">Languages: ${item.languages
+        <p> <span class = "label">Capital: </span>${item.capital}</p>
+         <p><span class = "label">Population:</span> ${item.population}</p>
+         <p><span class = "label">Languages:</span> ${item.languages
            .map(item => item.name)
-           .join(', ')}</span></p>`
+           .join(', ')}</p>`
     )
     .join('');
 }
