@@ -50,7 +50,7 @@ function createListMarkup(arr) {
   listRef.innerHTML = arr
     .map(
       item =>
-        `<li  class="country-list__item"><img class="flag" src="${item.flags.svg}" alt="flag of ${item.name} " width ="50px">
+        `<li  class="country-list__item"><img class="flag" src="${item.flags.svg}" alt="flag of ${item.name}" width ="50px">
          <h2 >${item.name}</h2> </li>`
     )
     .join('');
